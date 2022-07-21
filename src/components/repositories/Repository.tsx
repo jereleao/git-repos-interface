@@ -12,9 +12,6 @@ export const Repository: React.FC<IRepositoryProps> = ({
   updated_at,
   description,
   name,
-  releases_url,
-  disabled,
-  privateRepo,
 }) => {
   const RepoCard = styled.div`
     width: 35vw;
