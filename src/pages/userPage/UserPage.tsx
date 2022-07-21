@@ -1,5 +1,4 @@
 import { Navigate, useParams } from 'react-router';
-import styled from 'styled-components';
 import { Footer, Link, Main } from '../../components/commom';
 import { UserContent } from './UserContent';
 

@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('full app rendering/navigating', () => {
+  render(<App />, { wrapper: BrowserRouter });
+  const titleElement = screen.getByText(/Git Repos!/i);
+  expect(titleElement).toBeInTheDocument();
+
+  userEvent.click(screen.getByText(/about/i));
+
+  expect(screen.getByText(/Who are we/i)).toBeInTheDocument();
 });
